@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Web app</title>
+</head>
+    <body style="display: flex; flex-direction: column; margin: 0; min-height: 100vh; font-family: 'Poppins'; text-align: center;">
+        <header style="position: relative; top: 0; right: 0; margin: 0; display: flex; justify-content: flex-end;">
+            <img src="images/brown-dot.png" style="width: 50%; justify-self: flex-end;" />
+        </header>
+        <main style="display: flex; flex-direction: column; align-items: center;">
+            <h1 style="font-size: 2.5em; margin-top: 20%; ">Photo uploaded successfully!</h1>
+            <h3>It will be displayed on the box</h3>
+            <div style="display:flex; flex-direction: row; align-items: center; margin-top: 10%; justify-content: space-evenly">
+                <a href="camerapage.html" style="text-decoration: none; margin-right: 30px;">
+                    <img src="images/take-image-logo.png" alt="Ta bilde" style="width: 110px; margin: 0; z-index: 2;">
+                    <p style="text-decoration: none; color: #9AD0D3;">Take Picture</p>
+                </a>
+                <a href="sessionended.html" style="text-decoration: none; margin-left: 30px;">
+                    <img src="images/endsession.png" alt="Session ended" style="width: 110px; margin: 0; z-index: 2;">
+                    <p style="text-decoration: none; color: #EDBEA4;">End Session</p>
+                </a>
+            </div>
+        </main>
+        <footer style="position: fixed; bottom: 0; left: 0; margin: 0; display: flex; justify-content: flex-start;">
+            <img src="images/blue-dot.png" style="width: 50%; z-index: 1" />
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Web app</title>
+</head>
+
+<body
+    style="display: flex; flex-direction: column; margin: 0; min-height: 100vh; font-family: 'Poppins'; text-align: center;">
+    <header style="position: relative; top: 0; right: 0; margin: 0; display: flex; justify-content: flex-end;">
+        <img src="images/brown-dot.png" style="width: 50%; justify-self: flex-end;" />
+    </header>
+    <main style="display: flex; flex-direction: column; align-items: center;">
+        <h1 style="font-size: 2.5em; margin-top: 20%; ">Session ended</h1>
+        <h3 style="margin-bottom: 1px;">When the timer ends you will receive a notification</h3>
+        <h1 id="timer" style="margin: 1px; font-size: 5em;">12:00:00</h1>
+        <p style="margin-top: 5px;">Until you can enjoy your pictures!</p>
+    </main>
+    <footer style="position: fixed; bottom: 0; left: 0; margin: 0; display: flex; justify-content: flex-start;">
+        <img src="images/blue-dot.png" style="width: 50%; z-index: 1" />
+    </footer>
+</body>
+<script>
+   function startTimer(duration) {
+    let timer = duration;
+    const display = document.getElementById('timer');
+
+    function formatTime(time) {
+      const hours = Math.floor(time / 3600);
+      const minutes = Math.floor((time % 3600) / 60);
+      const seconds = time % 60;
+
+      return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    function updateTimer() {
+      display.textContent = formatTime(timer);
+
+      if (timer <= 0) {
+        clearInterval(intervalId);
+        alert('Time is up!');
+      } else {
+        timer--;
+      }
+    }
+
+    updateTimer(); // Initial call to display the full time
+
+    const intervalId = setInterval(updateTimer, 1000);
+  }
+
+  window.onload = function () {
+    const twelveHoursInSeconds = 12 * 60 * 60;
+    startTimer(twelveHoursInSeconds);
+  };
+</script>
+
+</html>
